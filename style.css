@@ -1,0 +1,326 @@
+body{
+    --purple:#665CAC;
+    --blue:#54C0D4;
+    --red:#EF6062;
+    --yellow:#F4EF7B;
+    --grey:#B0B0B0;
+    --dark_grey:#4A4A4A;
+    --grey_bar:rgba(128, 128, 128, 0.438);
+    --white: #FFFFFF;
+    --online:rgb(6, 214, 6);
+    --font-family: 'Overpass', sans-serif;
+    
+    
+    margin: 0;
+    background-color: #333;
+    font-size: 12px;
+    
+}
+
+/* header{
+    border-top-left-radius: 144em;
+    
+} */
+ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    
+}
+h2,p{
+    margin: 0;
+}
+
+.wrapper{
+    background-color: #444;
+    width: 80%;
+    
+
+    position: absolute;
+    margin:auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+/* app should be on the full screen of the phone. Now phone border is wrapper class */
+
+.app{
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #777;
+}
+.app header,footer{
+    background: #123;
+    height: 8%;
+}
+
+.app main{
+    background: var(--dark_grey);
+    height: 84%;
+    overflow-y: scroll;
+    
+    /* display: table; */
+
+}
+.container{
+    display: table;
+    width: 100%;    
+    height: 84%;
+    
+}
+
+ul{
+    display: table-row;
+    width:100%;
+    
+    list-style: none;
+    position: relative;       
+}
+
+.app main .container .contacts{
+    border: .02px solid var(--dark_grey);
+}
+ul li{
+    
+    position: relative;
+    padding: 1.5em;
+    border-top: 1px solid rgba(128, 128, 128, 0.438);
+    vertical-align: middle;
+ 
+}
+
+ul li:nth-child(1){
+    display: table-cell;
+    text-align:center ;
+}
+.app main ul li img{
+    width:3em;
+    vertical-align: middle;
+    border-radius: 35%; 
+    /* position: relative; */
+
+    /* top: 0;
+    bottom: 0;
+    right: 0;
+    left:0;
+    margin: auto; */
+}
+ .app main .container ul:nth-child(3n+1) li img{
+    background-color: var(--blue);
+}
+.app main .container ul:nth-child(3n+3) li img{
+    background-color: var(--red);
+}
+    
+.app main .container ul:nth-child(3n+2) li img{
+    background-color: var(--grey);
+}
+
+
+.info{
+    display:table-cell;
+    vertical-align: middle; 
+    font-family: var(--font_info);
+    
+    /* font-size: 12px; */
+    font-family:var(--font-family);
+    
+}
+h2{
+    font-weight:500;
+    color: var(--white);
+    
+
+}
+
+div li p{
+    font-weight:100;
+    position:relative;
+    top:10%;
+    /* font-size: 12px; */
+    font-family:var(--font-family);
+    color: var(--grey);
+}
+.container .seen{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    padding-right:0.5em;
+    /* font-size: 12px; */
+    color: var(--grey);
+          
+}
+.hour{
+    display:table-cell ;
+    vertical-align: middle;
+    color: var(--grey);
+    /* font-size: 12px; */
+       
+}
+
+.wrapper .app main ul .image::before{
+    content: " ";
+    position: relative;
+    left: 3.3em;
+    top:-1em;
+    
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 100%;
+    display: inline-block;
+    
+        
+}
+
+.status--online .image::before{
+    background: var(--online);
+    border: 0.1em solid var(--dark_grey);
+}
+
+.status--offline .image::before{
+    background: var(--grey);
+    border: 0.1em solid var(--dark_grey);
+}
+.status--busy .image::before{
+    background: var(--yellow);
+    border: 0.1em solid var(--dark_grey);
+}
+
+.status--online .info::before{
+    content: "online";
+    position: absolute;
+    color: var(--online);
+    left: 85%;
+    top: 35%;
+    display: inline-block;
+    opacity: 80%;
+    
+}
+.status--offline .info::before{
+    content: "5 min";
+    position: absolute;
+    color: var(--grey);
+    left: 85%;
+    top:35%;
+    white-space: nowrap;
+    opacity: 80%;
+}
+
+.status--busy .info::before{
+    content: "busy";
+    position: absolute;
+    color: var(--yellow);
+    left: 85%;
+    top:35%;
+    white-space: nowrap;
+    opacity: 80%;
+}
+
+.message--seen span{
+    color: var(--purple);
+}
+
+.up{
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 2em;
+    position:fixed;
+    left: 85%;
+    top: 88%;
+    
+    
+    background:var(--purple);
+    width: 1.2em;
+    
+    border-radius: 110%;  
+  
+}
+ .up a i{
+    color: var(--white);
+    /* font-size: 2em; */
+    /* position: relative; */
+    z-index: 1;
+    
+    
+    margin-left: 0.29em;
+}
+
+.up:hover i{
+    color:var(--grey);
+}
+
+@media(orientation:landscape) and (min-width:1000px){
+    body,.container{
+        font-size:25px;
+    }
+
+}
+
+@media(orientation:landscape) and (max-width:300px){
+    body,.container{
+        font-size:8px;
+    }
+
+}
+
+header i:nth-child(1){
+    display: inline-block;
+    position: absolute;
+    left: 85%;
+    font-size: 25px;
+    top:1%
+}
+header i:nth-child(2){
+    display: inline-block;
+    position: absolute;
+    left: 75%;
+    font-size: 25px;
+    top:1%
+}
+header p{
+    display: inline-block;
+    position: absolute;
+    left: 3%;
+    font-size: 18px;
+    top:2%;
+    color: var(--grey);
+
+}
+
+/* footer i:nth-child(2){
+    display: inline-block;
+    position: relative;
+    left: 20%;
+    font-size: 25px;
+    top:20%;
+    color:var(--grey);
+    transform: rotate(90deg);
+
+}
+
+footer i:nth-child(3){
+    display: inline-block;
+    position: relative;
+    left: 48%;
+    font-size: 25px;
+    top:20%;
+    color:var(--grey);
+
+}
+footer i:nth-child(4){
+    display: inline-block;
+    position: relative;
+    left: 75%;
+    font-size: 25px;
+    top:20%;
+    color:var(--grey);
+
+} */
+
+
+
+
